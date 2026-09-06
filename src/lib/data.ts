@@ -19,6 +19,8 @@ export interface CaseStudy {
   currentStatus: string;
   /** What I Would Improve Next — explicitly planned/roadmap items only */
   nextSteps?: string;
+  /** Optional custom heading for the nextSteps section (defaults to "Future Direction") */
+  nextStepsLabel?: string;
 }
 
 export interface Project {
@@ -125,7 +127,7 @@ export const projects: Record<string, Project> = {
     status: "Campus Navigation",
     year: "Mar 2026 – Present",
     description:
-      "A Flutter-based campus navigation app for Macquarie University, supporting destination discovery, route previews, transport information and deep linking. Designed as a reusable navigation platform, with a planned integration of MQ Journey as an optional Open Day experience.",
+      "A Flutter-based campus navigation app for Macquarie University, supporting destination discovery, route previews, transport information and deep linking. Designed as a reusable navigation platform, with a planned integration of MQ Journey as an optional Open Day experience. In development, not yet publicly released.",
     tags: [
       "Flutter",
       "Dart",
@@ -151,9 +153,11 @@ export const projects: Record<string, Project> = {
       deployment: "In development; not yet publicly released.",
       stakeholderImpact:
         "Forms the mobile layer connected to the Syllabus Sync ecosystem via destination deep links.",
-      currentStatus: "In development, not yet publicly released.",
+      currentStatus:
+        "In active development as the core, reusable campus navigation platform.",
       nextSteps:
-        "MQ Journey was originally developed as an event-focused experience for Macquarie University Open Day. Rather than maintaining two separate mobile apps, the plan is to integrate MQ Journey into MQ Navigation as an optional Open Day experience: a normal user gets standard campus navigation, while an Open Day visitor could enter an event-specific mode with Open Day destinations and visitor journeys layered on the same navigation, deep-linking and accessibility foundation. This is a planned future integration and is not yet implemented.",
+        "MQ Journey was originally developed as an event-focused experience for Macquarie University Open Day. Rather than maintaining two separate mobile apps, the plan is to integrate MQ Journey into MQ Navigation as an optional Open Day experience: a normal user gets standard campus navigation, while an Open Day visitor could enter an event-specific mode with Open Day destinations and visitor journeys layered on the same navigation, deep-linking and accessibility foundation. This is planned future work and is not yet implemented.",
+      nextStepsLabel: "MQ Journey and Open Day",
     },
     fullDescription:
       "MQ Navigation is a Flutter mobile app with destination discovery, route previews, transport information and access to key university locations, using GoRouter for navigation and deep linking. It receives destination-based deep links from the Syllabus Sync web platform, connecting a web action directly to a mobile navigation flow.",

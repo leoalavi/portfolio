@@ -100,7 +100,7 @@ export default function Home() {
                 <span className="text-gradient">Leo</span>
               </h1>
               <h2 className="text-2xl sm:text-3xl lg:text-4xl font-semibold text-text-secondary">
-                Software Engineer
+                Graduate Software Engineer
               </h2>
               <p className="text-sm sm:text-base text-text-muted font-medium">
 Full-Stack, Mobile & Applied AI · Graduating November 2026

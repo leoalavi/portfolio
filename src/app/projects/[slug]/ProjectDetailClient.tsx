@@ -192,7 +192,9 @@ export function ProjectDetailClient({ project }: { project: Project }) {
                 </ul>
               </div>
             )}
-            {cs?.nextSteps && <SubSection title="Future Direction" text={cs.nextSteps} />}
+            {cs?.nextSteps && (
+              <SubSection title={cs.nextStepsLabel ?? "Future Direction"} text={cs.nextSteps} />
+            )}
           </SectionCard>
         )}
 

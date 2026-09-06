@@ -125,7 +125,7 @@ export const projects: Record<string, Project> = {
     status: "Campus Navigation",
     year: "Mar 2026 – Present",
     description:
-      "A Flutter-based campus navigation app for Macquarie University, supporting destination discovery, route previews, transport information and deep linking from Syllabus Sync. Built as a reusable navigation platform rather than a single-purpose app.",
+      "A Flutter-based campus navigation app for Macquarie University, supporting destination discovery, route previews, transport information and deep linking. Designed as a reusable navigation platform, with a planned integration of MQ Journey as an optional Open Day experience.",
     tags: [
       "Flutter",
       "Dart",
@@ -140,20 +140,20 @@ export const projects: Record<string, Project> = {
     },
     caseStudy: {
       context:
-        "Finding buildings, transport options and services across a large university campus is a recurring problem for students and visitors. MQ Navigation was built as a reusable Flutter navigation platform to address this, rather than a one-off app tied to a single use case.",
+        "Finding buildings, transport options and services across a large university campus is a recurring problem for students and visitors. MQ Navigation was built as a reusable Flutter navigation platform to address this, rather than a one-off app tied to a single event or use case.",
       whatIBuilt:
         "A Flutter mobile app with destination discovery, route previews, transport information and access to key university locations, using GoRouter for navigation and deep linking. It receives destination-based deep links from the Syllabus Sync web platform, connecting a web action directly to a mobile navigation flow.",
       contribution:
         "Designed and built the app end-to-end in Flutter and Dart, including the navigation architecture, the deep-linking integration with Syllabus Sync, and the accessibility-focused mobile interface.",
       architecture:
-        "Built with Flutter and Dart, using GoRouter for routing and deep linking, with a mobile-first interface designed to be reusable across different campus navigation needs rather than hard-coded to one context.",
+        "Built with Flutter and Dart, using GoRouter for routing and deep linking, with a mobile-first, accessibility-focused interface.",
       testing: "Automated Flutter testing with GitHub Actions CI.",
       deployment: "In development; not yet publicly released.",
       stakeholderImpact:
         "Forms the mobile layer connected to the Syllabus Sync ecosystem via destination deep links.",
       currentStatus: "In development, not yet publicly released.",
       nextSteps:
-        "Planned: additional event-specific experiences (for example, a dedicated mode for a campus event) layered on top of the core navigation platform. Not yet implemented.",
+        "MQ Journey was originally developed as an event-focused experience for Macquarie University Open Day. Rather than maintaining two separate mobile apps, the plan is to integrate MQ Journey into MQ Navigation as an optional Open Day experience: a normal user gets standard campus navigation, while an Open Day visitor could enter an event-specific mode with Open Day destinations and visitor journeys layered on the same navigation, deep-linking and accessibility foundation. This is a planned future integration and is not yet implemented.",
     },
     fullDescription:
       "MQ Navigation is a Flutter mobile app with destination discovery, route previews, transport information and access to key university locations, using GoRouter for navigation and deep linking. It receives destination-based deep links from the Syllabus Sync web platform, connecting a web action directly to a mobile navigation flow.",

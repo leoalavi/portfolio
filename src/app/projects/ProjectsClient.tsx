@@ -40,7 +40,7 @@ export function ProjectsClient() {
         className="grid grid-cols-1 md:grid-cols-2 gap-4"
       >
         {projectList.map((project, i) => (
-          <motion.div key={project.slug} variants={fadeInUp}>
+          <motion.div key={project.slug} variants={fadeInUp} className="h-full">
             <ProjectCard project={project} featured={i === 0} />
           </motion.div>
         ))}

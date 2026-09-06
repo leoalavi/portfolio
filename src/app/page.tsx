@@ -292,7 +292,7 @@ I build full-stack web, Flutter mobile and applied AI products,
             className="grid grid-cols-1 md:grid-cols-2 gap-4"
           >
             {projectList.map((project) => (
-              <motion.div key={project.slug} variants={fadeInUp}>
+              <motion.div key={project.slug} variants={fadeInUp} className="h-full">
                 <ProjectCard project={project} />
               </motion.div>
             ))}

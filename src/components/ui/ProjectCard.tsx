@@ -16,7 +16,7 @@ export function ProjectCard({ project, featured = false }: ProjectCardProps) {
     <motion.div
       whileHover={{ y: -4 }}
       transition={{ type: "spring", stiffness: 300, damping: 25 }}
-      className={`group relative glass-card p-6 md:p-8 transition-all duration-300 ${
+      className={`group relative glass-card p-6 md:p-8 transition-all duration-300 flex flex-col h-full ${
         featured ? "md:col-span-2" : ""
       }`}
     >
@@ -62,7 +62,7 @@ export function ProjectCard({ project, featured = false }: ProjectCardProps) {
       </div>
 
       {/* Links */}
-      <div className="flex items-center gap-4">
+      <div className="flex items-center gap-4 mt-auto pt-1">
         {project.links.repo && (
           <a
             href={project.links.repo}

@@ -8,18 +8,47 @@ import { motion } from "framer-motion";
 import { fadeInUp, staggerContainer } from "@/lib/utils";
 import type { Project } from "@/lib/data";
 
-function DetailSection({ title, text }: { title: string; text: string }) {
+function SectionCard({
+  title,
+  children,
+}: {
+  title: string;
+  children: React.ReactNode;
+}) {
   return (
-    <motion.div variants={fadeInUp} className="glass-card p-6">
-      <h2 className="text-sm font-semibold text-text-muted uppercase tracking-wider mb-4">
+    <motion.div variants={fadeInUp} className="glass-card p-6 md:p-8">
+      <h2 className="text-xs font-semibold text-accent uppercase tracking-widest mb-6">
         {title}
       </h2>
-      <p className="text-sm text-text-secondary leading-relaxed">{text}</p>
+      <div className="space-y-6">{children}</div>
     </motion.div>
   );
 }
 
+function SubSection({ title, text }: { title: string; text: string }) {
+  return (
+    <div>
+      <h3 className="text-sm font-semibold text-foreground mb-2">{title}</h3>
+      <p className="text-sm text-text-secondary leading-relaxed">{text}</p>
+    </div>
+  );
+}
+
 export function ProjectDetailClient({ project }: { project: Project }) {
+  const cs = project.caseStudy;
+
+  const problem = cs?.context ?? project.context;
+  const whatIBuilt = cs?.whatIBuilt ?? project.fullDescription;
+  const showOverview = Boolean(problem || whatIBuilt || cs?.contribution);
+
+  const currentStatus = cs?.currentStatus ?? project.impact;
+  const showOutcome = Boolean(
+    cs?.stakeholderImpact ||
+      currentStatus ||
+      cs?.nextSteps ||
+      (!cs && project.highlights && project.highlights.length > 0)
+  );
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 16 }}
@@ -35,7 +64,7 @@ export function ProjectDetailClient({ project }: { project: Project }) {
         <ArrowLeft size={16} /> Back to Projects
       </Link>
 
-      <motion.div variants={staggerContainer} initial="hidden" animate="visible" className="space-y-8">
+      <motion.div variants={staggerContainer} initial="hidden" animate="visible" className="space-y-6">
         {/* Header */}
         <motion.div variants={fadeInUp} className="space-y-4">
           <div className="flex items-center gap-2 flex-wrap">
@@ -91,102 +120,86 @@ export function ProjectDetailClient({ project }: { project: Project }) {
           </div>
         </motion.div>
 
-        {/* Case study sections */}
-        {project.caseStudy ? (
-          <>
-            <DetailSection title="Problem & Context" text={project.caseStudy.context} />
-            <DetailSection title="What I Built" text={project.caseStudy.whatIBuilt} />
-            <DetailSection title="My Contribution" text={project.caseStudy.contribution} />
-            {project.caseStudy.architecture && (
-              <DetailSection
-                title="Architecture & Engineering Decisions"
-                text={project.caseStudy.architecture}
-              />
-            )}
-
-            {/* Tech stack */}
-            <motion.div variants={fadeInUp} className="glass-card p-6">
-              <h2 className="text-sm font-semibold text-text-muted uppercase tracking-wider mb-4">
-                Tech Stack
-              </h2>
-              <div className="flex flex-wrap gap-2">
-                {project.tags.map((tag) => (
-                  <span
-                    key={tag}
-                    className="px-3 py-1.5 text-xs font-medium rounded-lg bg-overlay-subtle text-text-secondary border border-border-subtle"
-                  >
-                    {tag}
-                  </span>
-                ))}
+        {/* 1. Project Overview — Problem, What I Built, My Contribution */}
+        {showOverview && (
+          <SectionCard title="Project Overview">
+            <div className="grid sm:grid-cols-2 gap-6 sm:gap-8">
+              {problem && <SubSection title="Problem" text={problem} />}
+              {whatIBuilt && <SubSection title="What I Built" text={whatIBuilt} />}
+            </div>
+            {cs?.contribution && (
+              <div className="pt-6 border-t border-border-subtle">
+                <SubSection title="My Contribution" text={cs.contribution} />
               </div>
-            </motion.div>
+            )}
+          </SectionCard>
+        )}
 
-            {project.caseStudy.challenges && (
-              <DetailSection title="Technical Challenges" text={project.caseStudy.challenges} />
-            )}
-            {project.caseStudy.testing && (
-              <DetailSection title="Testing" text={project.caseStudy.testing} />
-            )}
-            <DetailSection title="Deployment & Release" text={project.caseStudy.deployment} />
-            <DetailSection
-              title="Stakeholder & User Impact"
-              text={project.caseStudy.stakeholderImpact}
-            />
-            <DetailSection title="Current Status" text={project.caseStudy.currentStatus} />
-            {project.caseStudy.nextSteps && (
-              <DetailSection title="What I'd Improve Next" text={project.caseStudy.nextSteps} />
-            )}
-          </>
-        ) : (
-          <>
-            {project.context && <DetailSection title="Problem & Context" text={project.context} />}
-            {project.fullDescription && (
-              <DetailSection title="What I Built" text={project.fullDescription} />
-            )}
+        {/* 2. Engineering — Architecture, Tech Stack, Testing & Delivery */}
+        <SectionCard title="Engineering">
+          {cs?.architecture && (
+            <SubSection title="Architecture & Decisions" text={cs.architecture} />
+          )}
 
-            {/* Tech stack */}
-            <motion.div variants={fadeInUp} className="glass-card p-6">
-              <h2 className="text-sm font-semibold text-text-muted uppercase tracking-wider mb-4">
-                Tech Stack
-              </h2>
-              <div className="flex flex-wrap gap-2">
-                {project.tags.map((tag) => (
-                  <span
-                    key={tag}
-                    className="px-3 py-1.5 text-xs font-medium rounded-lg bg-overlay-subtle text-text-secondary border border-border-subtle"
-                  >
-                    {tag}
-                  </span>
-                ))}
+          <div>
+            <h3 className="text-sm font-semibold text-foreground mb-3">Tech Stack</h3>
+            <div className="flex flex-wrap gap-2">
+              {project.tags.map((tag) => (
+                <span
+                  key={tag}
+                  className="px-3 py-1.5 text-xs font-medium rounded-lg bg-overlay-subtle text-text-secondary border border-border-subtle"
+                >
+                  {tag}
+                </span>
+              ))}
+            </div>
+          </div>
+
+          {(cs?.testing || cs?.deployment) && (
+            <div>
+              <h3 className="text-sm font-semibold text-foreground mb-2">
+                Testing &amp; Delivery
+              </h3>
+              <div className="space-y-2">
+                {cs?.testing && (
+                  <p className="text-sm text-text-secondary leading-relaxed">{cs.testing}</p>
+                )}
+                {cs?.deployment && (
+                  <p className="text-sm text-text-secondary leading-relaxed">{cs.deployment}</p>
+                )}
               </div>
-            </motion.div>
+            </div>
+          )}
+        </SectionCard>
 
-            {project.highlights && project.highlights.length > 0 && (
-              <motion.div variants={fadeInUp} className="glass-card p-6">
-                <h2 className="text-sm font-semibold text-text-muted uppercase tracking-wider mb-4">
-                  My Contribution &amp; Key Technical Decisions
-                </h2>
-                <ul className="space-y-3">
+        {/* 3. Outcome, Current Status & Future Direction */}
+        {showOutcome && (
+          <SectionCard title="Outcome & Current Status">
+            {cs?.stakeholderImpact && (
+              <SubSection title="Stakeholder & User Impact" text={cs.stakeholderImpact} />
+            )}
+            {currentStatus && <SubSection title="Current Status" text={currentStatus} />}
+            {!cs && project.highlights && project.highlights.length > 0 && (
+              <div>
+                <h3 className="text-sm font-semibold text-foreground mb-3">Highlights</h3>
+                <ul className="space-y-2">
                   {project.highlights.map((h) => (
-                    <li key={h} className="flex items-start gap-3 text-text-secondary">
-                      <span className="text-accent mt-1 shrink-0 text-sm">▸</span>
-                      <span className="text-sm leading-relaxed">{h}</span>
+                    <li key={h} className="flex items-start gap-2 text-sm text-text-secondary leading-relaxed">
+                      <span className="text-accent mt-1 shrink-0">▸</span>
+                      <span>{h}</span>
                     </li>
                   ))}
                 </ul>
-              </motion.div>
+              </div>
             )}
-
-            {project.impact && (
-              <DetailSection title="Real-World Impact & Status" text={project.impact} />
-            )}
-          </>
+            {cs?.nextSteps && <SubSection title="Future Direction" text={cs.nextSteps} />}
+          </SectionCard>
         )}
 
         {/* Screenshots — only rendered when the field is present */}
         {project.screenshots !== undefined && (
-          <motion.div variants={fadeInUp} className="glass-card p-6">
-            <h2 className="text-sm font-semibold text-text-muted uppercase tracking-wider mb-4">
+          <motion.div variants={fadeInUp} className="glass-card p-6 md:p-8">
+            <h2 className="text-xs font-semibold text-accent uppercase tracking-widest mb-6">
               Screenshots
             </h2>
 
@@ -226,4 +239,3 @@ export function ProjectDetailClient({ project }: { project: Project }) {
     </motion.div>
   );
 }
-

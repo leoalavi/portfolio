@@ -127,7 +127,7 @@ export const projects: Record<string, Project> = {
     status: "Campus Navigation",
     year: "Mar 2026 – Present",
     description:
-      "A Flutter-based campus navigation app for Macquarie University, supporting destination discovery, route previews, transport information and deep linking. Designed as a reusable navigation platform, with a planned integration of MQ Journey as an optional Open Day experience. In development, not yet publicly released.",
+      "A Flutter-based campus navigation app for Macquarie University, supporting destination discovery, route previews, transport information and deep linking. Designed as a reusable campus navigation platform, with a planned future integration of MQ Journey — an Open Day-focused mobile experience — as an optional event mode within the same app. In development, not yet publicly released.",
     tags: [
       "Flutter",
       "Dart",
@@ -146,7 +146,7 @@ export const projects: Record<string, Project> = {
       whatIBuilt:
         "A Flutter mobile app with destination discovery, route previews, transport information and access to key university locations, using GoRouter for navigation and deep linking. It receives destination-based deep links from the Syllabus Sync web platform, connecting a web action directly to a mobile navigation flow.",
       contribution:
-        "Designed and built the app end-to-end in Flutter and Dart, including the navigation architecture, the deep-linking integration with Syllabus Sync, and the accessibility-focused mobile interface.",
+        "Co-developed the app in Flutter and Dart, contributing the navigation architecture, the deep-linking integration with Syllabus Sync, and the accessibility-focused mobile interface.",
       architecture:
         "Built with Flutter and Dart, using GoRouter for routing and deep linking, with a mobile-first, accessibility-focused interface.",
       testing: "Automated Flutter testing with GitHub Actions CI.",
@@ -162,7 +162,7 @@ export const projects: Record<string, Project> = {
     fullDescription:
       "MQ Navigation is a Flutter mobile app with destination discovery, route previews, transport information and access to key university locations, using GoRouter for navigation and deep linking. It receives destination-based deep links from the Syllabus Sync web platform, connecting a web action directly to a mobile navigation flow.",
     highlights: [
-      "Built a reusable Flutter campus navigation platform covering destination discovery, route previews and transport information",
+      "Co-developed a reusable Flutter campus navigation platform covering destination discovery, route previews and transport information",
       "Implemented destination-based deep linking between Syllabus Sync and the mobile app",
       "Designed a mobile-first, accessibility-focused interface with automated Flutter testing via GitHub Actions CI",
     ],
@@ -174,7 +174,7 @@ export const projects: Record<string, Project> = {
     status: "External TestFlight",
     year: "2026",
     description:
-      "A standalone Flutter event navigation app built with Macquarie University's Astronomy Open Night organiser team and course staff, covering venue navigation, event information and in-app Google Maps walking directions. In external TestFlight review, preparing for App Store and Google Play release.",
+      "A standalone Flutter event navigation app co-developed for Macquarie University's Astronomy Open Night in collaboration with the organiser team and course staff, covering venue navigation, event information and in-app Google Maps walking directions. In external TestFlight review, preparing for App Store and Google Play release. Developed by student app developers, not an official Macquarie University product.",
     tags: [
       "Flutter",
       "Dart",
@@ -192,7 +192,7 @@ export const projects: Record<string, Project> = {
       whatIBuilt:
         "A Flutter mobile app for event navigation and destination discovery, covering venue and event information, campus locations and directions, and in-app Google Maps integration that provides walking directions from the user's current location to a selected venue. The app supports deep linking, event-specific content, and was built with accessibility considerations throughout.",
       contribution:
-        "Built the app end-to-end in Flutter, including navigation, the Google Maps walking-directions integration and event-specific content. Also led the release engineering: Apple signing, bundle identifier, certificates and provisioning through Xcode and App Store Connect, TestFlight group setup, and the Google Play developer account setup.",
+        "Co-developed the app in Flutter, contributing navigation, the Google Maps walking-directions integration and event-specific content. I personally led the release engineering: Apple signing, bundle identifier, certificates and provisioning through Xcode and App Store Connect, TestFlight group setup, and the Google Play developer account setup.",
       architecture:
         "Built in Flutter, with in-app Google Maps integration for walking directions and an event-specific content setup scoped to Astronomy Open Night's venues and sessions.",
       challenges:
@@ -210,7 +210,7 @@ export const projects: Record<string, Project> = {
     fullDescription:
       "A Flutter mobile app for event navigation and destination discovery, covering venue and event information, campus locations and directions, and in-app Google Maps integration that provides walking directions from the user's current location to a selected venue. The app supports deep linking, event-specific content, and was built with accessibility considerations throughout.",
     highlights: [
-      "Built the app end-to-end in Flutter, including event navigation, venue and destination information, and in-app Google Maps walking directions",
+      "Co-developed the app in Flutter, covering event navigation, venue and destination information, and in-app Google Maps walking directions",
       "Configured Apple signing, bundle identifier, certificates and provisioning through Xcode and App Store Connect, and set up internal and external TestFlight groups",
       "Set up the Google Play developer account and release track alongside the iOS release process",
       "Coordinated a stakeholder walkthrough and organiser review with the Astronomy Open Night team and course staff ahead of submission",
@@ -223,7 +223,7 @@ export const projects: Record<string, Project> = {
     status: "Industry Project",
     year: "2026",
     description:
-      "An AI-powered retail assistant built through Macquarie University's PACE program with Salesforce as industry partner, targeting structured product recommendations, customer constraints and cross-sell/upsell workflows using external LLM APIs. An active, in-development project shaped by sponsor feedback.",
+      "An AI-powered retail assistant developed through Macquarie University's PACE program with Salesforce as the industry partner, focused on structured product recommendations, customer constraints and cross-sell/upsell workflows using external LLM APIs. An active, in-development project shaped by sponsor feedback.",
     tags: ["Python", "LLM APIs", "Retail Domain", "Salesforce PACE"],
     links: {},
     caseStudy: {
@@ -308,7 +308,7 @@ export const experiences: Experience[] = [
     period: "July 2026 – Present",
     type: "technical",
     description: [
-      "Debug issues and implement features across internal software tools and computer vision-related workflows, working within an existing production-style codebase.",
+      "Debug issues and implement features across internal software tools and computer vision-related workflows, working within an established internal engineering codebase.",
       "Investigated a review-tool issue where runtime behaviour did not match the current code, tracing it through the code and environment to a stale backend process serving an older API version, reinforcing a structured, evidence-based approach to debugging.",
       "Work with Python-based data and machine-learning workflows, including data preparation, model testing and evaluation, and internal review tooling.",
       "Participate in code reviews and technical discussions, contributing to iterative development.",
@@ -429,7 +429,6 @@ export const skillGroups: SkillGroup[] = [
     skills: [
       "Vercel AI SDK",
       "LLM Integration",
-      "Prompt Engineering",
       "PyTorch",
       "Computer Vision",
       "Transfer Learning",

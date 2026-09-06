@@ -99,25 +99,25 @@ export function ResumeClient() {
                     href={LINKEDIN_URL}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center gap-2 text-text-secondary hover:text-accent transition-colors text-sm"
+                    className="flex items-center gap-2 text-text-secondary hover:text-accent transition-colors text-sm font-medium"
                   >
-                    <LinkedinIcon size={14} /> linkedin.com/in/leo-alavi
+                    <LinkedinIcon size={14} /> LinkedIn
                   </a>
                   <a
                     href={GITHUB_URL}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center gap-2 text-text-secondary hover:text-accent transition-colors text-sm"
+                    className="flex items-center gap-2 text-text-secondary hover:text-accent transition-colors text-sm font-medium"
                   >
-                    <GithubIcon size={14} /> github.com/leoalavi
+                    <GithubIcon size={14} /> GitHub
                   </a>
                   <a
                     href={SITE_URL}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center gap-2 text-text-secondary hover:text-accent transition-colors text-sm"
+                    className="flex items-center gap-2 text-text-secondary hover:text-accent transition-colors text-sm font-medium"
                   >
-                    <Code2 size={14} /> leoalavi.dev
+                    <Code2 size={14} /> Portfolio
                   </a>
                 </div>
               </div>
@@ -138,13 +138,14 @@ export function ResumeClient() {
                 Macquarie University with hands-on experience in full-stack web
                 development, Flutter mobile applications, applied AI and
                 product development. Currently a Software Intern at Calumino,
-                working with Python-based data and machine-learning workflows.
-                Co-founded the Syllabus Sync ecosystem, selected for the
-                Macquarie University Incubator. Australian citizen graduating
-                in November 2026, seeking a graduate software engineering role
-                where I can contribute to product development, solve practical
-                engineering problems and grow within an experienced technical
-                team.
+                working across internal software tools, debugging, feature
+                development and Python-based computer vision workflows.
+                Co-founder of Syllabus Sync, selected for the Macquarie
+                University Incubator. Australian citizen graduating in
+                November 2026, seeking a graduate software engineering role
+                where I can contribute to real product development, solve
+                practical engineering problems and grow within an experienced
+                technical team.
               </p>
             </section>
           </AnimatedSection>
@@ -272,7 +273,7 @@ export function ResumeClient() {
                       <span className="text-xs text-text-muted">{exp.period}</span>
                     </div>
                     <ul className="space-y-1.5 mt-2">
-                      {exp.description.slice(0, 2).map((d) => (
+                      {exp.description.slice(0, 3).map((d) => (
                         <li key={d} className="flex items-start gap-2 text-sm text-text-secondary">
                           <span className="text-accent mt-1 shrink-0">▸</span>
                           {d}

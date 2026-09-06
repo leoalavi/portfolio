@@ -70,10 +70,13 @@ Full-Stack, Mobile & Applied AI · Macquarie University
                 <span className="text-foreground font-medium">
                   Software Intern at Calumino
                 </span>
-                , contributing to internal software applications and working
-                with Python-based data and machine-learning workflows
-                alongside engineers through code reviews and iterative
-                development.
+                , debugging and building features across internal software
+                tools and computer vision-related workflows within an
+                existing production-style codebase. A recent example: tracing
+                a review-tool issue where runtime behaviour didn&apos;t match
+                the current code back to a stale backend process serving an
+                older API version, which reinforced how much structured,
+                evidence-based debugging matters in practice.
               </p>
               <p className="text-text-secondary leading-relaxed">
                 I care about building software that is understandable,
@@ -83,18 +86,52 @@ Full-Stack, Mobile & Applied AI · Macquarie University
                 prototype.
               </p>
               <p className="text-text-secondary leading-relaxed">
-                I am the co-founder and developer of the{" "}
+                I am the co-founder and developer of{" "}
                 <span className="text-accent-light font-medium">
-                  Syllabus Sync ecosystem
+                  Syllabus Sync
                 </span>
-                , which includes Syllabus Sync, MQ Navigation and Sylla. The
-                initiative was selected for the
+                , a full-stack student productivity platform with AI-assisted
+                study tools through Sylla. The initiative was selected for the{" "}
                 <span className="text-foreground font-medium">
                   Macquarie University Incubator
                 </span>
                 , where I participate in founder education, customer discovery,
                 mentoring and the EDUCATE accelerator while continuing to refine
                 the product direction and technical implementation.
+              </p>
+              <p className="text-text-secondary leading-relaxed">
+                I also built{" "}
+                <span className="text-accent-light font-medium">
+                  MQ Navigation
+                </span>
+                , a reusable Flutter campus navigation platform covering
+                destination discovery, route previews and transport
+                information, with deep linking from Syllabus Sync. It&apos;s
+                still in development and not yet publicly released.
+              </p>
+              <p className="text-text-secondary leading-relaxed">
+                Separately, and completely independent from MQ Navigation, I
+                built the{" "}
+                <span className="text-accent-light font-medium">
+                  Astronomy Open Night event navigation app
+                </span>{" "}
+                in Flutter, working with Macquarie University&apos;s Astronomy
+                Open Night organiser team and course staff on venue
+                navigation, in-app Google Maps walking directions and
+                event-specific content. It&apos;s a student-developed app, not
+                an official Macquarie University product, and it&apos;s
+                currently in external TestFlight testing ahead of release on
+                the App Store and Google Play.
+              </p>
+              <p className="text-text-secondary leading-relaxed">
+                I&apos;m also part of a Macquarie University PACE team
+                building an AI-powered retail assistant with{" "}
+                <span className="text-foreground font-medium">
+                  Salesforce
+                </span>{" "}
+                as the industry sponsor, an active project focused on product
+                recommendations and practical retail workflows using external
+                LLM APIs.
               </p>
               <p className="text-text-secondary leading-relaxed">
                 My other technical work includes an end-to-end CIFAR-10

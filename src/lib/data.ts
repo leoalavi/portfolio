@@ -1,3 +1,26 @@
+export interface CaseStudy {
+  /** Context / Problem */
+  context: string;
+  /** What I Built */
+  whatIBuilt: string;
+  /** My Contribution */
+  contribution: string;
+  /** Architecture / Engineering Decisions */
+  architecture?: string;
+  /** Technical Challenges */
+  challenges?: string;
+  /** Testing */
+  testing?: string;
+  /** Deployment / Release */
+  deployment: string;
+  /** Stakeholder / User Impact */
+  stakeholderImpact: string;
+  /** Current Status */
+  currentStatus: string;
+  /** What I Would Improve Next — explicitly planned/roadmap items only */
+  nextSteps?: string;
+}
+
 export interface Project {
   slug: string;
   title: string;
@@ -6,9 +29,10 @@ export interface Project {
     | "Applied AI Product"
     | "Mobile Development"
     | "AI / Machine Learning";
+  /** Concise recruiter-facing status badge, e.g. "Live", "External TestFlight", "Industry Project" */
+  status?: string;
   year: string;
   description: string;
-  fullDescription: string;
   tags: string[];
   links: {
     demo?: string;
@@ -18,7 +42,13 @@ export interface Project {
     repoAlt?: string;
     repoAltLabel?: string;
   };
-  highlights: string[];
+  /** Full structured case study, used by flagship projects with a detail page */
+  caseStudy?: CaseStudy;
+  /** Legacy / simple fields, used when no full case study is provided */
+  context?: string;
+  fullDescription?: string;
+  impact?: string;
+  highlights?: string[];
   /**
    * Screenshot URLs for the project detail page.
    * - Omit (undefined): no screenshots section rendered.
@@ -31,50 +61,21 @@ export interface Project {
 }
 
 export const projects: Record<string, Project> = {
-  sylla: {
-    slug: "sylla",
-    title: "Sylla: AI-Powered Study Assistant",
-    category: "Applied AI Product",
-    year: "Jul 2026 – Present",
-    description:
-      "An AI-powered study assistant with streaming responses, persistent conversation history and reusable study workflows for summaries, explanations, flashcards, quizzes and study planning. Designed to work independently and as an integrated assistant within the wider Syllabus Sync ecosystem.",
-    fullDescription:
-      "Sylla is an AI-powered study assistant built with Next.js, React, TypeScript, Tailwind CSS, Supabase and the Vercel AI SDK. It provides streaming responses, persistent conversation history and reusable study workflows, including structured tools for summaries, explanations, flashcards, quizzes and study planning. Sylla is designed to operate both independently and as an integrated assistant within the wider Syllabus Sync ecosystem.",
-    tags: [
-      "Next.js",
-      "React",
-      "TypeScript",
-      "Tailwind CSS",
-      "Vercel AI SDK",
-      "Supabase",
-      "Vitest",
-    ],
-    links: {
-      repo: "https://github.com/leoalavi/Sylla",
-      demo: "https://sylla.syllabus-sync.app",
-      demoLabel: "Live App",
-    },
-    highlights: [
-      "Built an AI-powered study assistant with streaming responses, persistent conversation history and reusable study workflows using Next.js, TypeScript, Supabase and the Vercel AI SDK",
-      "Designed and implemented structured workflows for summaries, explanations, flashcards, quizzes and study planning",
-      "Designed Sylla to operate both independently and as an integrated assistant within the wider Syllabus Sync ecosystem",
-    ],
-  },
   "syllabus-sync": {
     slug: "syllabus-sync",
-    title: "Syllabus Sync Ecosystem: Student Experience Platform",
+    title: "Syllabus Sync: Full-Stack Student Platform with Integrated AI Assistant",
     category: "Full-Stack Web",
+    status: "MQ Incubator",
     year: "Dec 2025 – Present",
     description:
-      "A connected student-experience platform co-founded for Macquarie University students, supporting academic planning, deadlines, campus information and student productivity. Built with Next.js, React, TypeScript and Supabase, with accessibility, multilingual support, automated testing and CI/CD.",
-    fullDescription:
-      "Syllabus Sync is a connected student-experience platform co-founded for Macquarie University students, supporting academic planning, deadlines, campus information and student productivity. It is built with Next.js, React, TypeScript, Tailwind CSS and Supabase (PostgreSQL), with secure authentication, accessibility improvements, multilingual support, automated testing with Vitest, and end-to-end CI/CD via GitHub Actions and Vercel. The wider Syllabus Sync ecosystem also connects to MQ Navigation, a Flutter campus navigation companion that receives destination deep links from the platform, and to Sylla, an AI-assisted study application. Syllabus Sync was selected for the Macquarie University Incubator for further validation, mentoring and development.",
+      "A full-stack student productivity platform for Macquarie University students, covering academic planning, deadlines and campus information. Sylla, an integrated AI assistant built into the platform, adds AI-assisted explanations, summaries, flashcards, quizzes and study planning. Selected for the Macquarie University Incubator.",
     tags: [
       "Next.js",
       "React",
       "TypeScript",
       "Supabase",
       "PostgreSQL",
+      "Vercel AI SDK",
       "Tailwind CSS",
       "Vitest",
       "Playwright",
@@ -83,45 +84,179 @@ export const projects: Record<string, Project> = {
       repo: "https://github.com/leoalavi/syllabus-sync",
       demo: "https://syllabus-sync.app",
       demoLabel: "Live Platform",
+      repoAlt: "https://github.com/leoalavi/Sylla",
+      repoAltLabel: "Sylla (AI Assistant) Repo",
     },
+    caseStudy: {
+      context:
+        "Macquarie University students juggle deadlines, timetables and study material across scattered tools, with no single place that also helps them study more effectively. Syllabus Sync was co-founded to bring academic planning and campus information into one platform, with an integrated AI assistant to help students study within the same product.",
+      whatIBuilt:
+        "A full-stack web platform built with Next.js, React, TypeScript and Supabase (PostgreSQL), covering academic planning, deadlines, events and campus information, with authentication and a responsive, accessible UI. Sylla, built with the Vercel AI SDK, is integrated directly into the platform and provides AI-assisted explanations, summaries, flashcards, quizzes, study planning and persistent study conversations.",
+      contribution:
+        "Co-founder and developer. I own the frontend architecture, responsive design and accessibility, the Supabase database and authentication layer, and the integration of the AI assistant into the main product, alongside automated testing and CI/CD.",
+      architecture:
+        "Next.js App Router with a Supabase Postgres backend for data and authentication, and the Vercel AI SDK for the assistant's streaming responses and persistent conversation history. The AI assistant is built as an integrated feature area within the platform rather than a separate application.",
+      challenges:
+        "Balancing a broad academic-planning feature set with a genuinely useful AI assistant meant being deliberate about scope, keeping the study tools (summaries, flashcards, quizzes, planning) focused rather than open-ended, and keeping authentication and data access consistent across both the planning and AI-assisted parts of the platform.",
+      testing:
+        "Automated testing with Vitest and Playwright, with CI/CD via GitHub Actions and Vercel for continuous deployment.",
+      deployment: "Live, deployed on Vercel.",
+      stakeholderImpact:
+        "In active use by students, and presented to Macquarie University academics and stakeholders, leading to selection for the Macquarie University Incubator for further validation, mentoring and product development.",
+      currentStatus:
+        "Live and actively developed, with the AI assistant available inside the platform.",
+      nextSteps:
+        "Planned: deeper personalisation of study recommendations and expanded evaluation of the AI assistant's outputs as it develops further. Not yet implemented.",
+    },
+    fullDescription:
+      "Syllabus Sync is a full-stack student productivity platform built with Next.js, React, TypeScript, Tailwind CSS and Supabase (PostgreSQL), covering academic planning, deadlines, events and campus information. An integrated AI assistant, built with the Vercel AI SDK, provides AI-assisted explanations, summaries, flashcards, quizzes, study planning and persistent study conversations directly inside the platform.",
     highlights: [
-      "Co-founded and co-developed a connected student-experience platform for Macquarie University students, supporting academic planning, deadlines, campus information and student productivity",
-      "Implemented secure authentication, accessibility improvements and multilingual support across the platform",
+      "Co-founded and co-developed a full-stack student productivity platform with an integrated AI study assistant",
+      "Own frontend architecture, responsive design, accessibility and authentication using Next.js, TypeScript and Supabase",
+      "Integrated an AI assistant (Vercel AI SDK) directly into the platform for explanations, summaries, flashcards, quizzes and study planning",
       "Wrote Vitest test coverage and configured GitHub Actions and Vercel CI/CD pipelines for reliable delivery",
-      "Connected the platform to the wider ecosystem, including destination deep links into the MQ Navigation Flutter companion",
-      "Presented to Macquarie University academics and stakeholders, leading to selection for the Macquarie University Incubator for further validation, mentoring and development",
+      "Presented to Macquarie University academics and stakeholders, leading to selection for the Macquarie University Incubator",
     ],
   },
   "mq-navigation": {
     slug: "mq-navigation",
-    title: "MQ Navigation: Flutter Campus Navigation Companion",
+    title: "MQ Navigation: Campus Navigation Platform",
     category: "Mobile Development",
+    status: "Campus Navigation",
     year: "Mar 2026 – Present",
     description:
-      "A Flutter campus navigation companion supporting destination discovery, route previews, transport information and access to key university locations, with destination-based deep linking from Syllabus Sync.",
-    fullDescription:
-      "MQ Navigation is a Flutter campus navigation application supporting destination discovery, route previews, transport information and access to key university locations. It implements destination-based deep linking between Syllabus Sync and the mobile app, enabling direct web-to-mobile navigation. Built with Flutter and Dart, using GoRouter for navigation and deep linking, with a mobile-first, accessibility-focused interface and automated Flutter testing via GitHub Actions CI. It forms the mobile layer of the Syllabus Sync ecosystem, which was selected for the Macquarie University Incubator.",
+      "A Flutter-based campus navigation app for Macquarie University, supporting destination discovery, route previews, transport information and deep linking from Syllabus Sync. Built as a reusable navigation platform rather than a single-purpose app.",
     tags: [
       "Flutter",
       "Dart",
       "GoRouter",
       "Deep Linking",
-      "GitHub Actions",
+      "Accessibility",
       "Flutter Testing",
+      "GitHub Actions",
     ],
     links: {
       repo: "https://github.com/leoalavi/MQ_Navigation",
     },
+    caseStudy: {
+      context:
+        "Finding buildings, transport options and services across a large university campus is a recurring problem for students and visitors. MQ Navigation was built as a reusable Flutter navigation platform to address this, rather than a one-off app tied to a single use case.",
+      whatIBuilt:
+        "A Flutter mobile app with destination discovery, route previews, transport information and access to key university locations, using GoRouter for navigation and deep linking. It receives destination-based deep links from the Syllabus Sync web platform, connecting a web action directly to a mobile navigation flow.",
+      contribution:
+        "Designed and built the app end-to-end in Flutter and Dart, including the navigation architecture, the deep-linking integration with Syllabus Sync, and the accessibility-focused mobile interface.",
+      architecture:
+        "Built with Flutter and Dart, using GoRouter for routing and deep linking, with a mobile-first interface designed to be reusable across different campus navigation needs rather than hard-coded to one context.",
+      testing: "Automated Flutter testing with GitHub Actions CI.",
+      deployment: "In development; not yet publicly released.",
+      stakeholderImpact:
+        "Forms the mobile layer connected to the Syllabus Sync ecosystem via destination deep links.",
+      currentStatus: "In development, not yet publicly released.",
+      nextSteps:
+        "Planned: additional event-specific experiences (for example, a dedicated mode for a campus event) layered on top of the core navigation platform. Not yet implemented.",
+    },
+    fullDescription:
+      "MQ Navigation is a Flutter mobile app with destination discovery, route previews, transport information and access to key university locations, using GoRouter for navigation and deep linking. It receives destination-based deep links from the Syllabus Sync web platform, connecting a web action directly to a mobile navigation flow.",
     highlights: [
-      "Built a Flutter campus navigation application supporting destination discovery, route previews, transport information and access to key university locations",
-      "Implemented destination-based deep linking between Syllabus Sync and the mobile app, enabling direct web-to-mobile navigation",
-      "Improved app reliability and usability through mobile-first interface design, accessibility-focused flows and automated Flutter testing",
+      "Built a reusable Flutter campus navigation platform covering destination discovery, route previews and transport information",
+      "Implemented destination-based deep linking between Syllabus Sync and the mobile app",
+      "Designed a mobile-first, accessibility-focused interface with automated Flutter testing via GitHub Actions CI",
+    ],
+  },
+  "astronomy-open-night": {
+    slug: "astronomy-open-night",
+    title: "Astronomy Open Night: Event Navigation App",
+    category: "Mobile Development",
+    status: "External TestFlight",
+    year: "2026",
+    description:
+      "A standalone Flutter event navigation app built with Macquarie University's Astronomy Open Night organiser team and course staff, covering venue navigation, event information and in-app Google Maps walking directions. In external TestFlight review, preparing for App Store and Google Play release.",
+    tags: [
+      "Flutter",
+      "Dart",
+      "Google Maps SDK",
+      "Deep Linking",
+      "Xcode",
+      "App Store Connect",
+      "TestFlight",
+      "Google Play Console",
+    ],
+    links: {},
+    caseStudy: {
+      context:
+        "Astronomy Open Night needed a way for attendees to find venues, sessions and walking routes across campus on the night. I worked with the Astronomy Open Night organiser team and course staff to scope and build a dedicated navigation app for the real event, not a classroom exercise. This is a standalone project, separate from MQ Navigation.",
+      whatIBuilt:
+        "A Flutter mobile app for event navigation and destination discovery, covering venue and event information, campus locations and directions, and in-app Google Maps integration that provides walking directions from the user's current location to a selected venue. The app supports deep linking, event-specific content, and was built with accessibility considerations throughout.",
+      contribution:
+        "Built the app end-to-end in Flutter, including navigation, the Google Maps walking-directions integration and event-specific content. Also led the release engineering: Apple signing, bundle identifier, certificates and provisioning through Xcode and App Store Connect, TestFlight group setup, and the Google Play developer account setup.",
+      architecture:
+        "Built in Flutter, with in-app Google Maps integration for walking directions and an event-specific content setup scoped to Astronomy Open Night's venues and sessions.",
+      challenges:
+        "Coordinating a real release timeline against a fixed event date meant getting Apple's signing, provisioning and TestFlight process right under time pressure, and incorporating organiser feedback on content and venues without derailing the release schedule.",
+      testing:
+        "Final testing and an external organiser review cycle through TestFlight ahead of public release, alongside Apple's standard review process for TestFlight builds.",
+      deployment:
+        "Apple and Google Play developer accounts set up. The latest iOS build has been approved for external TestFlight, with external organiser review underway. In final release preparation for the App Store and Google Play, including privacy policy, store assets and metadata. Not yet publicly released.",
+      stakeholderImpact:
+        "Built directly with the Astronomy Open Night organiser team and Macquarie University course staff for a real event, including a stakeholder walkthrough and content updates from organisers.",
+      currentStatus: "External TestFlight review; final release preparation.",
+      nextSteps:
+        "Planned: public release on the Apple App Store and Google Play once organiser review and store submission are complete.",
+    },
+    fullDescription:
+      "A Flutter mobile app for event navigation and destination discovery, covering venue and event information, campus locations and directions, and in-app Google Maps integration that provides walking directions from the user's current location to a selected venue. The app supports deep linking, event-specific content, and was built with accessibility considerations throughout.",
+    highlights: [
+      "Built the app end-to-end in Flutter, including event navigation, venue and destination information, and in-app Google Maps walking directions",
+      "Configured Apple signing, bundle identifier, certificates and provisioning through Xcode and App Store Connect, and set up internal and external TestFlight groups",
+      "Set up the Google Play developer account and release track alongside the iOS release process",
+      "Coordinated a stakeholder walkthrough and organiser review with the Astronomy Open Night team and course staff ahead of submission",
+    ],
+  },
+  "salesforce-ai-retail-agent": {
+    slug: "salesforce-ai-retail-agent",
+    title: "Salesforce AI Retail Agent",
+    category: "Applied AI Product",
+    status: "Industry Project",
+    year: "2026",
+    description:
+      "An AI-powered retail assistant built through Macquarie University's PACE program with Salesforce as industry partner, targeting structured product recommendations, customer constraints and cross-sell/upsell workflows using external LLM APIs. An active, in-development project shaped by sponsor feedback.",
+    tags: ["Python", "LLM APIs", "Retail Domain", "Salesforce PACE"],
+    links: {},
+    caseStudy: {
+      context:
+        "Delivered through Macquarie University's PACE program in partnership with Salesforce, the brief was to build a working AI-powered retail assistant that reasons over structured retailer product data rather than acting as a generic chatbot.",
+      whatIBuilt:
+        "An in-development AI-powered retail assistant designed around structured product data, customer constraints and recommendation workflows such as product recommendations and cross-sell/upsell, using external LLM APIs. The target architecture is intentionally model- and provider-flexible rather than locked to one LLM vendor. This describes the project's direction and target design; specific components such as tool calling, structured outputs and evaluation are still being built and are not yet fully implemented.",
+      contribution:
+        "Contributing within a Macquarie University PACE team on the industry-sponsored brief, focused on the retail recommendation logic and on keeping the architecture provider-flexible rather than tied to a single LLM vendor.",
+      architecture:
+        "Planned architecture: user request, then intent and constraint extraction, then tool calling (product search, filter by price, check availability, compare products, find alternatives or complementary products), then recommendation logic, then a structured response. This is the current target design; not all stages are fully implemented yet.",
+      challenges:
+        "Working with real, structured retailer product data rather than a toy dataset, and designing an architecture that avoids locking into a single LLM provider while still supporting reliable tool calling and recommendations, both current focus areas as the project develops.",
+      testing:
+        "AI evaluation and testing practices are a current focus area as the implementation matures; not yet fully in place.",
+      deployment: "In development; not yet deployed or released.",
+      stakeholderImpact:
+        "Delivered with Salesforce as the industry sponsor, with sponsor check-ins and iterative feedback shaping scope and direction.",
+      currentStatus:
+        "Active, in-progress industry project. Capabilities such as tool calling, structured outputs, evaluation and guardrails are current or planned work rather than completed features, and are only described as done once implemented.",
+      nextSteps:
+        "Planned next milestones: implement and validate tool calling for product search and filtering, structured output handling, and AI evaluation/observability.",
+    },
+    fullDescription:
+      "An in-development AI-powered retail assistant designed around structured product data, customer constraints and recommendation workflows such as product recommendations and cross-sell/upsell, using external LLM APIs, with a target architecture that is model- and provider-flexible rather than locked to one LLM vendor.",
+    highlights: [
+      "Working within a Macquarie University PACE team on an industry-sponsored brief from Salesforce to build a retail-focused AI assistant",
+      "Contributing to a target architecture that keeps the underlying LLM provider flexible rather than fixed to one vendor",
+      "Focused on practical retail workflows: product recommendations, customer constraints and cross-sell/upsell suggestions",
+      "Participating in sponsor check-ins and iterative feedback as the project develops",
     ],
   },
   "cifar-10-image-classification": {
     slug: "cifar-10-image-classification",
     title: "CIFAR-10 Image Classification: PyTorch Benchmark",
     category: "AI / Machine Learning",
+    status: "ML Foundations",
     year: "Apr 2026 – Jul 2026",
     description:
       "An end-to-end image-classification project comparing a custom CNN, MobileNetV2 and ResNet-18 under controlled training and transfer-learning conditions. ResNet-18 achieved 87.48% test accuracy. The project includes Grad-CAM interpretability, INT8 quantisation, CLI inference and a live Gradio deployment.",
@@ -169,9 +304,10 @@ export const experiences: Experience[] = [
     period: "July 2026 – Present",
     type: "technical",
     description: [
-      "Contribute to the development and maintenance of internal software applications, supporting debugging, feature implementation and testing.",
-      "Work with Python-based data and machine-learning workflows, including data preparation, model testing and evaluation.",
-      "Collaborate with engineers through code reviews, technical discussions and iterative development.",
+      "Debug issues and implement features across internal software tools and computer vision-related workflows, working within an existing production-style codebase.",
+      "Investigated a review-tool issue where runtime behaviour did not match the current code, tracing it through the code and environment to a stale backend process serving an older API version, reinforcing a structured, evidence-based approach to debugging.",
+      "Work with Python-based data and machine-learning workflows, including data preparation, model testing and evaluation, and internal review tooling.",
+      "Participate in code reviews and technical discussions, contributing to iterative development.",
     ],
   },
   {
@@ -187,9 +323,8 @@ export const experiences: Experience[] = [
       repoLabel: "GitHub",
     },
     description: [
-      "Co-founded and co-developed the Syllabus Sync ecosystem, integrating a full-stack web platform, Flutter mobile navigation and AI-assisted study tools.",
-      "Help drive frontend architecture, accessibility, technical planning and automated testing across user-facing features.",
-      "Implemented destination-based deep linking between Syllabus Sync and MQ Navigation, creating a connected web-to-mobile campus-navigation flow.",
+      "Co-founded and co-developed the Syllabus Sync ecosystem, a full-stack student productivity platform with AI-assisted study tools through Sylla.",
+      "Own frontend architecture, responsive design, accessibility and authentication using Next.js, TypeScript and Supabase, alongside automated testing across user-facing features.",
       "Participate in customer discovery, product validation, mentoring and founder development through the Macquarie University Incubator and EDUCATE accelerator.",
     ],
   },
@@ -286,15 +421,16 @@ export const skillGroups: SkillGroup[] = [
     ],
   },
   {
-    label: "AI/ML",
+    label: "Applied AI",
     skills: [
-      "PyTorch",
       "Vercel AI SDK",
-      "Transfer Learning",
+      "LLM Integration",
+      "Prompt Engineering",
+      "PyTorch",
       "Computer Vision",
+      "Transfer Learning",
       "Model Evaluation",
       "Grad-CAM",
-      "Gradio",
     ],
   },
   {
@@ -302,6 +438,7 @@ export const skillGroups: SkillGroup[] = [
     skills: [
       "Git",
       "GitHub",
+      "Debugging",
       "GitHub Actions",
       "Vitest",
       "Playwright",

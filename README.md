@@ -246,36 +246,47 @@ Live site: [https://www.leoalavi.dev](https://www.leoalavi.dev)
 
 ## 📌 Featured Portfolio Projects
 
-### 1. Syllabus Sync - Student Experience Platform
+### 1. Syllabus Sync - Full-Stack Student Platform with Integrated AI Assistant
 
-A connected student-experience platform for Macquarie University students, supporting academic planning, deadlines, campus information and student productivity.
+A full-stack student productivity platform for Macquarie University students, covering academic planning, deadlines and campus information, with an integrated AI assistant (Sylla) built into the platform for explanations, summaries, flashcards, quizzes and study planning.
 
-Built with Next.js, React, TypeScript and Supabase, with accessibility, multilingual support, automated testing and CI/CD.
-
-| | |
-| :--- | :--- |
-| **Stack** | Next.js · React · TypeScript · Supabase · Tailwind CSS |
-| **Links** | [Live Demo](https://syllabus-sync.app) · [Source](https://github.com/leoalavi/syllabus-sync) |
-
-### 2. MQ Navigation - Flutter Campus Navigation Companion
-
-A Flutter-based campus-navigation companion for students and visitors, with campus discovery, route previews, transport information and destination deep links from Syllabus Sync.
+Built with Next.js, React, TypeScript and Supabase, with accessibility, authentication, automated testing and CI/CD. Selected for the Macquarie University Incubator.
 
 | | |
 | :--- | :--- |
-| **Stack** | Flutter · Dart · GoRouter · Deep Linking · GitHub Actions |
+| **Stack** | Next.js · React · TypeScript · Supabase · Vercel AI SDK · Tailwind CSS |
+| **Status** | MQ Incubator |
+| **Links** | [Live Platform](https://syllabus-sync.app) · [Source](https://github.com/leoalavi/syllabus-sync) · [Sylla Repo](https://github.com/leoalavi/Sylla) |
+
+### 2. MQ Navigation - Campus Navigation Platform
+
+A reusable Flutter campus navigation app for Macquarie University, supporting destination discovery, route previews, transport information and deep linking from Syllabus Sync. In development, not yet publicly released.
+
+| | |
+| :--- | :--- |
+| **Stack** | Flutter · Dart · GoRouter · Deep Linking · Flutter Testing |
+| **Status** | In development |
 | **Links** | [Source](https://github.com/leoalavi/MQ_Navigation) |
 
-### 3. Sylla - AI-Powered Study Assistant
+### 3. Astronomy Open Night - Event Navigation App
 
-An AI-assisted study application with streaming conversations, persistent history and reusable tools for summaries, explanations, flashcards, quizzes and structured study planning.
+A standalone Flutter event navigation app built with Macquarie University's Astronomy Open Night organiser team and course staff, covering venue navigation, event information and in-app Google Maps walking directions. In external TestFlight review, preparing for App Store and Google Play release. Developed by student app developers, not an official Macquarie University product.
 
 | | |
 | :--- | :--- |
-| **Stack** | Next.js · React · TypeScript · Supabase · Vercel AI SDK |
-| **Links** | [Source](https://github.com/leoalavi/Sylla) |
+| **Stack** | Flutter · Dart · Google Maps SDK · Deep Linking · Xcode · TestFlight |
+| **Status** | External TestFlight, not yet publicly released |
 
-### 4. CIFAR-10 Image Classification - PyTorch Benchmark
+### 4. Salesforce AI Retail Agent
+
+An active, industry-sponsored Macquarie University PACE project with Salesforce to build a working AI-powered retail assistant using retailer product data, with a model- and provider-flexible architecture. In development.
+
+| | |
+| :--- | :--- |
+| **Stack** | Python · LLM APIs · Retail Domain |
+| **Status** | Industry project, in development |
+
+### 5. CIFAR-10 Image Classification - PyTorch Benchmark
 
 An end-to-end image-classification project comparing a custom CNN, MobileNetV2 and ResNet-18. ResNet-18 achieved 87.48% test accuracy, with Grad-CAM interpretability, INT8 quantisation, CLI inference and a live Gradio demo.
 

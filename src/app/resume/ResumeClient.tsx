@@ -192,11 +192,18 @@ export function ResumeClient() {
               <div className="space-y-4">
                 {Object.values(projects).filter((p) => !p.resumeHide).map((project) => (
                   <div key={project.slug} className="glass-card p-6">
-                    <div className="flex flex-col sm:flex-row sm:items-baseline justify-between mb-3">
-                      <h4 className="text-lg font-semibold text-foreground">
-                        {project.title}
-                      </h4>
-                      <span className="text-xs text-text-muted">{project.year}</span>
+                    <div className="flex flex-col sm:flex-row sm:items-baseline justify-between mb-3 gap-1">
+                      <div className="flex items-center gap-2 flex-wrap">
+                        <h4 className="text-lg font-semibold text-foreground">
+                          {project.title}
+                        </h4>
+                        {project.status && (
+                          <span className="text-[10px] font-medium px-2 py-0.5 rounded-full bg-secondary/10 text-secondary border border-secondary/20">
+                            {project.status}
+                          </span>
+                        )}
+                      </div>
+                      <span className="text-xs text-text-muted shrink-0">{project.year}</span>
                     </div>
                     <p className="text-xs text-accent-light font-medium mb-3">
                       {project.tags.join(" · ")}

@@ -8,6 +8,17 @@ import { motion } from "framer-motion";
 import { fadeInUp, staggerContainer } from "@/lib/utils";
 import type { Project } from "@/lib/data";
 
+function DetailSection({ title, text }: { title: string; text: string }) {
+  return (
+    <motion.div variants={fadeInUp} className="glass-card p-6">
+      <h2 className="text-sm font-semibold text-text-muted uppercase tracking-wider mb-4">
+        {title}
+      </h2>
+      <p className="text-sm text-text-secondary leading-relaxed">{text}</p>
+    </motion.div>
+  );
+}
+
 export function ProjectDetailClient({ project }: { project: Project }) {
   return (
     <motion.div
@@ -27,17 +38,22 @@ export function ProjectDetailClient({ project }: { project: Project }) {
       <motion.div variants={staggerContainer} initial="hidden" animate="visible" className="space-y-8">
         {/* Header */}
         <motion.div variants={fadeInUp} className="space-y-4">
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-2 flex-wrap">
             <span className="text-xs font-medium px-2.5 py-1 rounded-full bg-accent/10 text-accent border border-accent/20">
               {project.category}
             </span>
+            {project.status && (
+              <span className="text-xs font-medium px-2.5 py-1 rounded-full bg-secondary/10 text-secondary border border-secondary/20">
+                {project.status}
+              </span>
+            )}
             <span className="text-xs text-text-muted">{project.year}</span>
           </div>
           <h1 className="text-3xl md:text-4xl font-bold text-foreground">
             {project.title}
           </h1>
           <p className="text-lg text-text-secondary leading-relaxed">
-            {project.fullDescription}
+            {project.description}
           </p>
 
           {/* Links */}
@@ -75,37 +91,97 @@ export function ProjectDetailClient({ project }: { project: Project }) {
           </div>
         </motion.div>
 
-        {/* Tech stack */}
-        <motion.div variants={fadeInUp} className="glass-card p-6">
-          <h2 className="text-sm font-semibold text-text-muted uppercase tracking-wider mb-4">
-            Tech Stack
-          </h2>
-          <div className="flex flex-wrap gap-2">
-            {project.tags.map((tag) => (
-              <span
-                key={tag}
-                className="px-3 py-1.5 text-xs font-medium rounded-lg bg-overlay-subtle text-text-secondary border border-border-subtle"
-              >
-                {tag}
-              </span>
-            ))}
-          </div>
-        </motion.div>
+        {/* Case study sections */}
+        {project.caseStudy ? (
+          <>
+            <DetailSection title="Problem & Context" text={project.caseStudy.context} />
+            <DetailSection title="What I Built" text={project.caseStudy.whatIBuilt} />
+            <DetailSection title="My Contribution" text={project.caseStudy.contribution} />
+            {project.caseStudy.architecture && (
+              <DetailSection
+                title="Architecture & Engineering Decisions"
+                text={project.caseStudy.architecture}
+              />
+            )}
 
-        {/* Key Highlights */}
-        <motion.div variants={fadeInUp} className="glass-card p-6">
-          <h2 className="text-sm font-semibold text-text-muted uppercase tracking-wider mb-4">
-            Key Highlights
-          </h2>
-          <ul className="space-y-3">
-            {project.highlights.map((h) => (
-              <li key={h} className="flex items-start gap-3 text-text-secondary">
-                <span className="text-accent mt-1 shrink-0 text-sm">▸</span>
-                <span className="text-sm leading-relaxed">{h}</span>
-              </li>
-            ))}
-          </ul>
-        </motion.div>
+            {/* Tech stack */}
+            <motion.div variants={fadeInUp} className="glass-card p-6">
+              <h2 className="text-sm font-semibold text-text-muted uppercase tracking-wider mb-4">
+                Tech Stack
+              </h2>
+              <div className="flex flex-wrap gap-2">
+                {project.tags.map((tag) => (
+                  <span
+                    key={tag}
+                    className="px-3 py-1.5 text-xs font-medium rounded-lg bg-overlay-subtle text-text-secondary border border-border-subtle"
+                  >
+                    {tag}
+                  </span>
+                ))}
+              </div>
+            </motion.div>
+
+            {project.caseStudy.challenges && (
+              <DetailSection title="Technical Challenges" text={project.caseStudy.challenges} />
+            )}
+            {project.caseStudy.testing && (
+              <DetailSection title="Testing" text={project.caseStudy.testing} />
+            )}
+            <DetailSection title="Deployment & Release" text={project.caseStudy.deployment} />
+            <DetailSection
+              title="Stakeholder & User Impact"
+              text={project.caseStudy.stakeholderImpact}
+            />
+            <DetailSection title="Current Status" text={project.caseStudy.currentStatus} />
+            {project.caseStudy.nextSteps && (
+              <DetailSection title="What I'd Improve Next" text={project.caseStudy.nextSteps} />
+            )}
+          </>
+        ) : (
+          <>
+            {project.context && <DetailSection title="Problem & Context" text={project.context} />}
+            {project.fullDescription && (
+              <DetailSection title="What I Built" text={project.fullDescription} />
+            )}
+
+            {/* Tech stack */}
+            <motion.div variants={fadeInUp} className="glass-card p-6">
+              <h2 className="text-sm font-semibold text-text-muted uppercase tracking-wider mb-4">
+                Tech Stack
+              </h2>
+              <div className="flex flex-wrap gap-2">
+                {project.tags.map((tag) => (
+                  <span
+                    key={tag}
+                    className="px-3 py-1.5 text-xs font-medium rounded-lg bg-overlay-subtle text-text-secondary border border-border-subtle"
+                  >
+                    {tag}
+                  </span>
+                ))}
+              </div>
+            </motion.div>
+
+            {project.highlights && project.highlights.length > 0 && (
+              <motion.div variants={fadeInUp} className="glass-card p-6">
+                <h2 className="text-sm font-semibold text-text-muted uppercase tracking-wider mb-4">
+                  My Contribution &amp; Key Technical Decisions
+                </h2>
+                <ul className="space-y-3">
+                  {project.highlights.map((h) => (
+                    <li key={h} className="flex items-start gap-3 text-text-secondary">
+                      <span className="text-accent mt-1 shrink-0 text-sm">▸</span>
+                      <span className="text-sm leading-relaxed">{h}</span>
+                    </li>
+                  ))}
+                </ul>
+              </motion.div>
+            )}
+
+            {project.impact && (
+              <DetailSection title="Real-World Impact & Status" text={project.impact} />
+            )}
+          </>
+        )}
 
         {/* Screenshots — only rendered when the field is present */}
         {project.screenshots !== undefined && (

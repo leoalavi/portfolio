@@ -100,7 +100,7 @@ export default function Home() {
                 <span className="text-gradient">Leo</span>
               </h1>
               <h2 className="text-2xl sm:text-3xl lg:text-4xl font-semibold text-text-secondary">
-                Graduate Software Engineer
+                Software Engineer
               </h2>
               <p className="text-sm sm:text-base text-text-muted font-medium">
 Full-Stack, Mobile & Applied AI · Graduating November 2026
@@ -114,24 +114,18 @@ Full-Stack, Mobile & Applied AI · Graduating November 2026
               transition={{ duration: 0.6, delay: 0.4 }}
               className="text-lg text-text-secondary leading-relaxed max-w-xl mb-6"
             >
-I build accessible full-stack web applications, Flutter mobile
-              products and applied AI experiences using{" "}
-              <span className="text-accent-light">TypeScript</span>,{" "}
-              <span className="text-accent-light">React</span>,{" "}
-              <span className="text-accent-light">Next.js</span>,{" "}
-              <span className="text-accent-light">Flutter</span> and{" "}
-              <span className="text-accent-light">Python</span>. I am the
-              co-founder of the{" "}
+I build full-stack web, Flutter mobile and applied AI products,
+              including a live student platform and a mobile app currently in
+              external testing for a university event. I&apos;m a final-year IT
+              student at{" "}
               <span className="text-foreground font-medium">
-                Syllabus Sync ecosystem
+                Macquarie University
               </span>
-              , selected for the{" "}
+              , Software Intern at{" "}
+              <span className="text-foreground font-medium">Calumino</span>,
+              and co-founder of{" "}
               <span className="text-foreground font-medium">
-                Macquarie University Incubator
-              </span>
-              , and currently gaining industry experience as a{" "}
-              <span className="text-foreground font-medium">
-                Software Intern at Calumino
+                Syllabus Sync
               </span>
               .
             </motion.p>

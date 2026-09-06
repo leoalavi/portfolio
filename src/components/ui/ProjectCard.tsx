@@ -20,12 +20,19 @@ export function ProjectCard({ project, featured = false }: ProjectCardProps) {
         featured ? "md:col-span-2" : ""
       }`}
     >
-      {/* Category badge */}
-      <div className="flex items-center justify-between mb-4">
-        <span className="text-xs font-medium px-2.5 py-1 rounded-full bg-accent/10 text-accent border border-accent/20">
-          {project.category}
-        </span>
-        <span className="text-xs text-text-muted">{project.year}</span>
+      {/* Category + status badges */}
+      <div className="flex items-center justify-between mb-4 gap-2">
+        <div className="flex items-center gap-2 flex-wrap">
+          <span className="text-xs font-medium px-2.5 py-1 rounded-full bg-accent/10 text-accent border border-accent/20">
+            {project.category}
+          </span>
+          {project.status && (
+            <span className="text-xs font-medium px-2.5 py-1 rounded-full bg-secondary/10 text-secondary border border-secondary/20">
+              {project.status}
+            </span>
+          )}
+        </div>
+        <span className="text-xs text-text-muted shrink-0">{project.year}</span>
       </div>
 
       {/* Title */}

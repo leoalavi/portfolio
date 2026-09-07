@@ -124,10 +124,10 @@ export const projects: Record<string, Project> = {
     slug: "mq-navigation",
     title: "MQ Navigation: Campus Navigation Platform",
     category: "Mobile Development",
-    status: "Campus Navigation",
+    status: "In Development",
     year: "Mar 2026 – Present",
     description:
-      "A Flutter-based campus navigation app for Macquarie University, supporting destination discovery, route previews, transport information and deep linking. Designed as a reusable campus navigation platform, with a planned future integration of MQ Journey — an Open Day-focused mobile experience — as an optional event mode within the same app. In development, not yet publicly released.",
+      "A Flutter campus navigation app for Macquarie University with destination discovery, route previews, transport information and deep linking. The project is being developed as the shared navigation foundation for future campus experiences, including MQ Journey.",
     tags: [
       "Flutter",
       "Dart",
@@ -142,39 +142,37 @@ export const projects: Record<string, Project> = {
     },
     caseStudy: {
       context:
-        "Finding buildings, transport options and services across a large university campus is a recurring problem for students and visitors. MQ Navigation was built as a reusable Flutter navigation platform to address this, rather than a one-off app tied to a single event or use case.",
+        "Finding buildings, transport and services across a large campus is a common problem for students and visitors. MQ Navigation was built to solve this as a general-purpose campus navigation app.",
       whatIBuilt:
-        "A Flutter mobile app with destination discovery, route previews, transport information and access to key university locations, using GoRouter for navigation and deep linking. It receives destination-based deep links from the Syllabus Sync web platform, connecting a web action directly to a mobile navigation flow.",
+        "A Flutter app with destination discovery, route previews, transport information and access to key university locations, built with GoRouter for navigation and deep linking. It receives destination-based deep links from the Syllabus Sync web platform.",
       contribution:
-        "Co-developed the app in Flutter and Dart, contributing the navigation architecture, the deep-linking integration with Syllabus Sync, and the accessibility-focused mobile interface.",
+        "Co-developed the app in Flutter and Dart. Contributed the navigation architecture, the Syllabus Sync deep-linking integration, and the accessibility-focused interface.",
       architecture:
-        "Built with Flutter and Dart, using GoRouter for routing and deep linking, with a mobile-first, accessibility-focused interface.",
+        "Flutter and Dart, with GoRouter for routing and deep linking. Mobile-first, accessibility-focused interface.",
       testing: "Automated Flutter testing with GitHub Actions CI.",
       deployment: "In development; not yet publicly released.",
-      stakeholderImpact:
-        "Forms the mobile layer connected to the Syllabus Sync ecosystem via destination deep links.",
-      currentStatus:
-        "In active development as the core, reusable campus navigation platform.",
+      stakeholderImpact: "Connected to Syllabus Sync via destination deep links.",
+      currentStatus: "Pre-release. Core navigation features are being built out.",
       nextSteps:
-        "MQ Journey was originally developed as an event-focused experience for Macquarie University Open Day. Rather than maintaining two separate mobile apps, the plan is to integrate MQ Journey into MQ Navigation as an optional Open Day experience: a normal user gets standard campus navigation, while an Open Day visitor could enter an event-specific mode with Open Day destinations and visitor journeys layered on the same navigation, deep-linking and accessibility foundation. This is planned future work and is not yet implemented.",
+        "MQ Journey was originally built as a separate Open Day experience. The plan is to integrate it into MQ Navigation as an optional event mode, so Open Day visitors can access event-specific content without a separate app. This integration is planned and not yet implemented.",
       nextStepsLabel: "MQ Journey and Open Day",
     },
     fullDescription:
-      "MQ Navigation is a Flutter mobile app with destination discovery, route previews, transport information and access to key university locations, using GoRouter for navigation and deep linking. It receives destination-based deep links from the Syllabus Sync web platform, connecting a web action directly to a mobile navigation flow.",
+      "MQ Navigation is a Flutter app with destination discovery, route previews, transport information and access to key university locations, built with GoRouter for navigation and deep linking. It receives destination-based deep links from the Syllabus Sync web platform.",
     highlights: [
-      "Co-developed a reusable Flutter campus navigation platform covering destination discovery, route previews and transport information",
+      "Co-developed a Flutter campus navigation app covering destination discovery, route previews and transport information",
       "Implemented destination-based deep linking between Syllabus Sync and the mobile app",
-      "Designed a mobile-first, accessibility-focused interface with automated Flutter testing via GitHub Actions CI",
+      "Built a mobile-first, accessibility-focused interface with automated Flutter testing via GitHub Actions CI",
     ],
   },
   "astronomy-open-night": {
     slug: "astronomy-open-night",
     title: "Astronomy Open Night: Event Navigation App",
     category: "Mobile Development",
-    status: "External TestFlight",
+    status: "External Testing · Pre-release",
     year: "2026",
     description:
-      "A standalone Flutter event navigation app co-developed for Macquarie University's Astronomy Open Night in collaboration with the organiser team and course staff, covering venue navigation, event information and in-app Google Maps walking directions. In external TestFlight review, preparing for App Store and Google Play release. Developed by student app developers, not an official Macquarie University product.",
+      "A Flutter event navigation app co-developed for Macquarie University's Astronomy Open Night, providing event information, venue navigation and Google Maps walking directions. Currently in external testing and preparing for App Store and Google Play release. Developed by student app developers, not an official Macquarie University product.",
     tags: [
       "Flutter",
       "Dart",
@@ -220,40 +218,32 @@ export const projects: Record<string, Project> = {
     slug: "salesforce-ai-retail-agent",
     title: "Salesforce AI Retail Agent",
     category: "Applied AI Product",
-    status: "Industry Project",
+    status: "Upcoming Industry Project",
     year: "2026",
     description:
-      "An AI-powered retail assistant developed through Macquarie University's PACE program with Salesforce as the industry partner, focused on structured product recommendations, customer constraints and cross-sell/upsell workflows using external LLM APIs. An active, in-development project shaped by sponsor feedback.",
+      "Upcoming Macquarie University PACE industry project with Salesforce, focused on exploring an AI-assisted retail experience for product recommendations, customer requirements and related retail workflows.",
     tags: ["Python", "LLM APIs", "Retail Domain", "Salesforce PACE"],
     links: {},
     caseStudy: {
       context:
-        "Delivered through Macquarie University's PACE program in partnership with Salesforce, the brief was to build a working AI-powered retail assistant that reasons over structured retailer product data rather than acting as a generic chatbot.",
+        "This is an upcoming Macquarie University PACE industry project with Salesforce as the sponsor. The project has not started yet.",
       whatIBuilt:
-        "An in-development AI-powered retail assistant designed around structured product data, customer constraints and recommendation workflows such as product recommendations and cross-sell/upsell, using external LLM APIs. The target architecture is intentionally model- and provider-flexible rather than locked to one LLM vendor. This describes the project's direction and target design; specific components such as tool calling, structured outputs and evaluation are still being built and are not yet fully implemented.",
+        "Planned scope: an AI-assisted retail experience covering product recommendations, customer requirements and related retail workflows, likely using external LLM APIs. Development has not started, so this reflects the intended direction rather than built functionality.",
       contribution:
-        "Contributing within a Macquarie University PACE team on the industry-sponsored brief, focused on the retail recommendation logic and on keeping the architecture provider-flexible rather than tied to a single LLM vendor.",
-      architecture:
-        "Planned architecture: user request, then intent and constraint extraction, then tool calling (product search, filter by price, check availability, compare products, find alternatives or complementary products), then recommendation logic, then a structured response. This is the current target design; not all stages are fully implemented yet.",
-      challenges:
-        "Working with real, structured retailer product data rather than a toy dataset, and designing an architecture that avoids locking into a single LLM provider while still supporting reliable tool calling and recommendations, both current focus areas as the project develops.",
-      testing:
-        "AI evaluation and testing practices are a current focus area as the implementation matures; not yet fully in place.",
-      deployment: "In development; not yet deployed or released.",
+        "My specific role and contributions will be defined once the project begins.",
+      deployment: "Not started. Expected to begin later in 2026.",
       stakeholderImpact:
-        "Delivered with Salesforce as the industry sponsor, with sponsor check-ins and iterative feedback shaping scope and direction.",
-      currentStatus:
-        "Active, in-progress industry project. Capabilities such as tool calling, structured outputs, evaluation and guardrails are current or planned work rather than completed features, and are only described as done once implemented.",
+        "Salesforce is the industry sponsor for this upcoming Macquarie University PACE project.",
+      currentStatus: "Upcoming. Development has not started.",
       nextSteps:
-        "Planned next milestones: implement and validate tool calling for product search and filtering, structured output handling, and AI evaluation/observability.",
+        "Planned to begin in 2026, with scope refined once the project starts.",
     },
     fullDescription:
-      "An in-development AI-powered retail assistant designed around structured product data, customer constraints and recommendation workflows such as product recommendations and cross-sell/upsell, using external LLM APIs, with a target architecture that is model- and provider-flexible rather than locked to one LLM vendor.",
+      "Planned scope: an AI-assisted retail experience covering product recommendations, customer requirements and related retail workflows, likely using external LLM APIs. Development has not started.",
     highlights: [
-      "Working within a Macquarie University PACE team on an industry-sponsored brief from Salesforce to build a retail-focused AI assistant",
-      "Contributing to a target architecture that keeps the underlying LLM provider flexible rather than fixed to one vendor",
-      "Focused on practical retail workflows: product recommendations, customer constraints and cross-sell/upsell suggestions",
-      "Participating in sponsor check-ins and iterative feedback as the project develops",
+      "Upcoming Macquarie University PACE industry project with Salesforce as the sponsor",
+      "Planned focus on product recommendations, customer requirements and cross-sell/upsell workflows",
+      "Development has not started; scope will be refined once the project begins",
     ],
   },
   "cifar-10-image-classification": {
@@ -309,7 +299,7 @@ export const experiences: Experience[] = [
     type: "technical",
     description: [
       "Debug issues and implement features across internal software tools and computer vision-related workflows, working within an established internal engineering codebase.",
-      "Investigated a review-tool issue where runtime behaviour did not match the current code, tracing it through the code and environment to a stale backend process serving an older API version, reinforcing a structured, evidence-based approach to debugging.",
+      "Investigated runtime inconsistencies in an internal review tool, tracing the issue across application code and environment configuration to identify a stale backend process serving an outdated API version.",
       "Work with Python-based data and machine-learning workflows, including data preparation, model testing and evaluation, and internal review tooling.",
       "Participate in code reviews and technical discussions, contributing to iterative development.",
     ],

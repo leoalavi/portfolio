@@ -260,7 +260,7 @@ Built with Next.js, React, TypeScript and Supabase, with accessibility, authenti
 
 ### 2. MQ Navigation - Campus Navigation Platform
 
-A reusable Flutter campus navigation app for Macquarie University, supporting destination discovery, route previews, transport information and deep linking from Syllabus Sync. In development, not yet publicly released.
+A Flutter campus navigation app for Macquarie University with destination discovery, route previews, transport information and deep linking. Being developed as the shared navigation foundation for future campus experiences, including MQ Journey.
 
 | | |
 | :--- | :--- |
@@ -270,21 +270,21 @@ A reusable Flutter campus navigation app for Macquarie University, supporting de
 
 ### 3. Astronomy Open Night - Event Navigation App
 
-A standalone Flutter event navigation app built with Macquarie University's Astronomy Open Night organiser team and course staff, covering venue navigation, event information and in-app Google Maps walking directions. In external TestFlight review, preparing for App Store and Google Play release. Developed by student app developers, not an official Macquarie University product.
+A Flutter event navigation app co-developed for Macquarie University's Astronomy Open Night, providing event information, venue navigation and Google Maps walking directions. Currently in external testing and preparing for App Store and Google Play release. Developed by student app developers, not an official Macquarie University product.
 
 | | |
 | :--- | :--- |
 | **Stack** | Flutter · Dart · Google Maps SDK · Deep Linking · Xcode · TestFlight |
-| **Status** | External TestFlight, not yet publicly released |
+| **Status** | External testing, pre-release |
 
 ### 4. Salesforce AI Retail Agent
 
-An active, industry-sponsored Macquarie University PACE project with Salesforce to build a working AI-powered retail assistant using retailer product data, with a model- and provider-flexible architecture. In development.
+Upcoming Macquarie University PACE industry project with Salesforce, focused on exploring an AI-assisted retail experience for product recommendations, customer requirements and related retail workflows. Development has not started.
 
 | | |
 | :--- | :--- |
 | **Stack** | Python · LLM APIs · Retail Domain |
-| **Status** | Industry project, in development |
+| **Status** | Upcoming industry project |
 
 ### 5. CIFAR-10 Image Classification - PyTorch Benchmark
 

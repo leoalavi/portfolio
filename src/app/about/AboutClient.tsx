@@ -70,11 +70,10 @@ Full-Stack, Mobile & Applied AI · Macquarie University
                 <span className="text-foreground font-medium">
                   Software Intern at Calumino
                 </span>
-                , where I debug issues and implement features across internal
-                software tools and computer vision-related workflows. The
-                experience has strengthened my approach to structured
-                debugging, testing and working within an established
-                engineering codebase.
+                , contributing to internal software and data workflows,
+                including Python-based tooling, computer vision-related
+                review systems, debugging, testing and feature development
+                within an established engineering codebase.
               </p>
               <p className="text-text-secondary leading-relaxed">
                 I also co-founded{" "}
@@ -89,31 +88,32 @@ Full-Stack, Mobile & Applied AI · Macquarie University
                 .
               </p>
               <p className="text-text-secondary leading-relaxed">
-                Alongside this, I&apos;ve worked on Flutter mobile products
+                Alongside this, I have worked on Flutter mobile applications
                 including{" "}
                 <span className="text-accent-light font-medium">
                   MQ Navigation
                 </span>{" "}
-                and the separate{" "}
+                and the{" "}
                 <span className="text-accent-light font-medium">
                   Astronomy Open Night event navigation app
                 </span>
-                , gaining experience in navigation, deep linking,
-                accessibility, stakeholder feedback, TestFlight testing and
-                mobile release preparation.
+                , gaining practical experience in mobile navigation, deep
+                linking, accessibility, external testing and release
+                preparation.
               </p>
               <p className="text-text-secondary leading-relaxed">
-                I&apos;m also part of a Macquarie University PACE team
-                developing an AI-powered retail assistant with{" "}
+                I am also preparing to begin a Macquarie University PACE
+                industry project with{" "}
                 <span className="text-foreground font-medium">
                   Salesforce
-                </span>{" "}
-                as the industry sponsor.
+                </span>
+                , focused on exploring an AI-assisted retail experience and
+                structured product recommendation workflows.
               </p>
               <p className="text-text-secondary leading-relaxed">
                 I care about building software that is maintainable,
-                well-tested and useful to real people, with attention to
-                product quality, accessibility and reliable engineering.
+                well-tested and useful to real people, with strong attention
+                to product quality, accessibility and reliable engineering.
               </p>
             </div>
 

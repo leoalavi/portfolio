@@ -258,26 +258,36 @@ Built with Next.js, React, TypeScript and Supabase, with accessibility, authenti
 | **Status** | MQ Incubator |
 | **Links** | [Live Platform](https://syllabus-sync.app) · [Source](https://github.com/leoalavi/syllabus-sync) · [Sylla Repo](https://github.com/leoalavi/Sylla) |
 
-### 2. MQ Navigation - Campus Navigation Platform
+### 2. Sylla - AI-Powered Study Assistant
 
-A Flutter campus navigation app for Macquarie University with destination discovery, route previews, transport information and deep linking.
+An AI-powered study assistant with streaming responses, persistent conversation history and reusable study workflows for summaries, explanations, flashcards, quizzes and study planning. Operates independently and as an integrated assistant within the wider Syllabus Sync ecosystem.
 
 | | |
 | :--- | :--- |
-| **Stack** | Flutter · Dart · GoRouter · Deep Linking · Flutter Testing |
+| **Stack** | Next.js · React · TypeScript · Tailwind CSS · Vercel AI SDK · Supabase · Vitest |
+| **Status** | Live |
+| **Links** | [Live App](https://sylla.syllabus-sync.app) · [Source](https://github.com/leoalavi/Sylla) |
+
+### 3. MQ Navigation - Flutter Campus Navigation App
+
+Building a Flutter campus navigation app supporting destination discovery, route previews, transport information and access to key university locations, with destination-based deep linking to and from Syllabus Sync.
+
+| | |
+| :--- | :--- |
+| **Stack** | Flutter · Dart · GoRouter · Deep Linking · GitHub Actions · Flutter Testing |
 | **Status** | In development |
 | **Links** | [Source](https://github.com/leoalavi/MQ_Navigation) · [MQ Journey Repo](https://github.com/leoalavi/MQ-Journey) |
 
-### 3. Astronomy Open Night - Event Navigation App
+### 4. Astronomy Open Night - Flutter Event Navigation App
 
-A Flutter event navigation app co-developed for Macquarie University's Astronomy Open Night, providing event information, venue navigation and Google Maps walking directions. Currently in external testing and preparing for App Store and Google Play release. Developed by student app developers, not an official Macquarie University product.
+A Flutter event navigation app co-developed for Macquarie University's Astronomy Open Night, providing event information, venue navigation and Google Maps walking directions. Currently in external testing and preparing for App Store and Google Play distribution. Developed by student app developers, not an official Macquarie University product.
 
 | | |
 | :--- | :--- |
-| **Stack** | Flutter · Dart · Google Maps SDK · Deep Linking · Xcode · TestFlight |
+| **Stack** | Flutter · Dart · Google Maps SDK · Deep Linking · Xcode |
 | **Status** | External testing, pre-release |
 
-### 4. Salesforce AI Retail Agent
+### 5. Salesforce AI Retail Agent
 
 Upcoming Macquarie University PACE industry project with Salesforce, focused on exploring an AI-assisted retail experience for product recommendations, customer requirements and related retail workflows. Development has not started.
 
@@ -286,7 +296,7 @@ Upcoming Macquarie University PACE industry project with Salesforce, focused on 
 | **Stack** | Salesforce PACE · Retail Domain · Planned: LLM Integration |
 | **Status** | Upcoming industry project |
 
-### 5. CIFAR-10 Image Classification - PyTorch Benchmark
+### 6. CIFAR-10 Image Classification - PyTorch Benchmark
 
 An end-to-end image-classification project comparing a custom CNN, MobileNetV2 and ResNet-18. ResNet-18 achieved 87.48% test accuracy, with Grad-CAM interpretability, INT8 quantisation, CLI inference and a live Gradio demo.
 

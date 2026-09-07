@@ -69,6 +69,7 @@ export const projects: Record<string, Project> = {
     category: "Full-Stack Web",
     status: "MQ Incubator",
     year: "Dec 2025 – Present",
+    resumeHide: true,
     description:
       "A full-stack student productivity platform for Macquarie University students, covering academic planning, deadlines and campus information. Sylla, an integrated AI assistant built into the platform, adds AI-assisted explanations, summaries, flashcards, quizzes and study planning. Selected for the Macquarie University Incubator.",
     tags: [
@@ -120,22 +121,51 @@ export const projects: Record<string, Project> = {
       "Presented to Macquarie University academics and stakeholders, leading to selection for the Macquarie University Incubator",
     ],
   },
+  sylla: {
+    slug: "sylla",
+    title: "Sylla – AI-Powered Study Assistant",
+    category: "Applied AI Product",
+    status: "Live",
+    year: "July 2026 – Present",
+    description:
+      "An AI-powered study assistant with streaming responses, persistent conversation history and reusable study workflows for summaries, explanations, flashcards, quizzes and study planning. Designed to operate independently and as an integrated assistant within the wider Syllabus Sync ecosystem.",
+    tags: [
+      "Next.js",
+      "React",
+      "TypeScript",
+      "Tailwind CSS",
+      "Vercel AI SDK",
+      "Supabase",
+      "Vitest",
+    ],
+    links: {
+      repo: "https://github.com/leoalavi/Sylla",
+      demo: "https://sylla.syllabus-sync.app",
+      demoLabel: "Live App",
+    },
+    fullDescription:
+      "Sylla is an AI-powered study assistant built with Next.js, React, TypeScript, Tailwind CSS, Supabase and the Vercel AI SDK, providing streaming responses, persistent conversation history and reusable study workflows for summaries, explanations, flashcards, quizzes and study planning.",
+    highlights: [
+      "Built an AI-powered study assistant with streaming responses, persistent conversation history and reusable study workflows using Next.js, TypeScript, Supabase and the Vercel AI SDK",
+      "Designed and implemented structured workflows for summaries, explanations, flashcards, quizzes and study planning",
+      "Designed Sylla to operate both independently and as an integrated assistant within the wider Syllabus Sync ecosystem",
+    ],
+  },
   "mq-navigation": {
     slug: "mq-navigation",
-    title: "MQ Navigation: Campus Navigation Platform",
+    title: "MQ Navigation – Flutter Campus Navigation App",
     category: "Mobile Development",
     status: "In Development",
-    year: "Mar 2026 – Present",
+    year: "March 2026 – Present",
     description:
-      "A Flutter campus navigation app for Macquarie University with destination discovery, route previews, transport information and deep linking.",
+      "Building a Flutter campus navigation app supporting destination discovery, route previews, transport information and access to key university locations. Implemented destination-based deep linking between Syllabus Sync and the mobile app, enabling direct web-to-mobile navigation, with a mobile-first, accessibility-focused interface and automated Flutter testing.",
     tags: [
       "Flutter",
       "Dart",
       "GoRouter",
       "Deep Linking",
-      "Accessibility",
-      "Flutter Testing",
       "GitHub Actions",
+      "Flutter Testing",
     ],
     links: {
       repo: "https://github.com/leoalavi/MQ_Navigation",
@@ -169,22 +199,13 @@ export const projects: Record<string, Project> = {
   },
   "astronomy-open-night": {
     slug: "astronomy-open-night",
-    title: "Astronomy Open Night: Event Navigation App",
+    title: "Astronomy Open Night – Flutter Event Navigation App",
     category: "Mobile Development",
     status: "External Testing · Pre-release",
-    year: "2026",
+    year: "August 2026 – Present",
     description:
-      "A Flutter event navigation app co-developed for Macquarie University's Astronomy Open Night, providing event information, venue navigation and Google Maps walking directions. Currently in external testing and preparing for App Store and Google Play release. Developed by student app developers, not an official Macquarie University product.",
-    tags: [
-      "Flutter",
-      "Dart",
-      "Google Maps SDK",
-      "Deep Linking",
-      "Xcode",
-      "App Store Connect",
-      "TestFlight",
-      "Google Play Console",
-    ],
+      "Co-developing a Flutter event navigation app for Macquarie University's Astronomy Open Night, supporting event information, venue navigation and in-app Google Maps walking directions. Currently in external testing and preparing for App Store and Google Play distribution. Developed by student app developers, not an official Macquarie University product.",
+    tags: ["Flutter", "Dart", "Google Maps SDK", "Deep Linking", "Xcode"],
     links: {},
     caseStudy: {
       context:
@@ -222,6 +243,7 @@ export const projects: Record<string, Project> = {
     category: "Applied AI Product",
     status: "Upcoming Industry Project",
     year: "2026",
+    resumeHide: true,
     description:
       "Upcoming Macquarie University PACE industry project with Salesforce, focused on exploring an AI-assisted retail experience for product recommendations, customer requirements and related retail workflows.",
     tags: ["Salesforce PACE", "Retail Domain", "Planned: LLM Integration"],
@@ -254,6 +276,7 @@ export const projects: Record<string, Project> = {
     category: "AI / Machine Learning",
     status: "ML Foundations",
     year: "Apr 2026 – Jul 2026",
+    resumeHide: true,
     description:
       "An end-to-end image-classification project comparing a custom CNN, MobileNetV2 and ResNet-18 under controlled training and transfer-learning conditions. ResNet-18 achieved 87.48% test accuracy. The project includes Grad-CAM interpretability, INT8 quantisation, CLI inference and a live Gradio deployment.",
     fullDescription:
@@ -300,10 +323,10 @@ export const experiences: Experience[] = [
     period: "July 2026 – Present",
     type: "technical",
     description: [
-      "Debug issues and implement features across internal software tools and computer vision-related workflows, working within an established internal engineering codebase.",
-      "Investigated runtime inconsistencies in an internal review tool, tracing the issue across application code and environment configuration to identify a stale backend process serving an outdated API version.",
-      "Work with Python-based data and machine-learning workflows, including data preparation, model testing and evaluation, and internal review tooling.",
-      "Participate in code reviews and technical discussions, contributing to iterative development.",
+      "Contribute to internal software tools and computer vision-related review workflows, implementing features, debugging issues and validating changes within an established engineering codebase.",
+      "Develop and maintain Python-based tooling supporting internal review, annotation and computer vision workflows.",
+      "Investigate issues across application code and runtime environments, including tracing inconsistent review-tool behaviour to an outdated backend process serving a stale API version.",
+      "Collaborate with engineers through code reviews, technical discussions, testing and iterative development.",
     ],
   },
   {
@@ -319,8 +342,9 @@ export const experiences: Experience[] = [
       repoLabel: "GitHub",
     },
     description: [
-      "Co-founded and co-developed the Syllabus Sync ecosystem, a full-stack student productivity platform with AI-assisted study tools through Sylla.",
-      "Own frontend architecture, responsive design, accessibility and authentication using Next.js, TypeScript and Supabase, alongside automated testing across user-facing features.",
+      "Co-founded and co-developed Syllabus Sync, a full-stack student productivity platform with integrated AI study tools through Sylla.",
+      "Contribute to frontend architecture, authentication, responsive design, accessibility and automated testing using Next.js, TypeScript and Supabase.",
+      "Implemented destination-based deep linking between Syllabus Sync and MQ Navigation, enabling direct web-to-mobile campus navigation.",
       "Participate in customer discovery, product validation, mentoring and founder development through the Macquarie University Incubator and EDUCATE accelerator.",
     ],
   },
@@ -331,8 +355,8 @@ export const experiences: Experience[] = [
     note: "Promoted from a three-month internship to a paid development role",
     type: "technical",
     description: [
-      "Improved the company's WordPress website across mobile responsiveness, usability and page performance, delivering a more consistent experience across desktop and mobile.",
-      "Automated recurring internal coordination workflows using Monday.com, reducing manual follow-up and giving team members clearer visibility of task ownership and progress.",
+      "Improved the company's WordPress website across mobile responsiveness, usability and page performance.",
+      "Automated recurring internal coordination workflows using Monday.com, reducing manual follow-up and improving visibility of task ownership and progress.",
       "Collaborated with stakeholders to translate business requirements into practical website and workflow improvements.",
     ],
   },
@@ -370,7 +394,8 @@ export const education: Education[] = [
     period: "July 2023 – November 2026",
     details: [
       "Majors: Artificial Intelligence · Web and Mobile Application Development",
-      "Developed practical experience across software engineering, full-stack development, mobile applications, databases, data structures, algorithms and applied AI.",
+      "WAM: 75/100 (Distinction)",
+      "Coursework and practical development across software engineering, full-stack development, mobile applications, databases, data structures, algorithms and applied AI.",
     ],
   },
   {
@@ -378,7 +403,7 @@ export const education: Education[] = [
     institution: "TAFE NSW",
     period: "July 2022 – July 2023",
     details: [
-      "Completed practical training in HTML, CSS, JavaScript, PHP, MySQL, responsive design and database-driven application development.",
+      "Practical training in HTML, CSS, JavaScript, PHP, MySQL, responsive design and database-driven application development.",
     ],
   },
 ];
@@ -406,7 +431,7 @@ export const skillGroups: SkillGroup[] = [
     ],
   },
   {
-    label: "Backend & Data",
+    label: "Backend & Databases",
     skills: [
       "Node.js",
       "Supabase",
@@ -433,7 +458,6 @@ export const skillGroups: SkillGroup[] = [
     skills: [
       "Git",
       "GitHub",
-      "Debugging",
       "GitHub Actions",
       "Vitest",
       "Playwright",

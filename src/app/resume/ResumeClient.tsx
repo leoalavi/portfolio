@@ -20,6 +20,9 @@ import { CONTACT_EMAIL, GITHUB_URL, LINKEDIN_URL, PHONE } from "@/lib/constants"
 import { experiences, education, skillGroups, projects } from "@/lib/data";
 import { SITE_URL } from "@/lib/constants";
 
+/** Curated project selection and order for the resume, independent of the main portfolio grid order */
+const resumeProjectOrder = ["astronomy-open-night", "sylla", "mq-navigation"];
+
 export function ResumeClient() {
   return (
     <div className="relative min-h-screen pt-24 pb-16">
@@ -135,17 +138,15 @@ export function ResumeClient() {
               </div>
               <p className="text-text-secondary leading-relaxed">
                 Final-year Bachelor of Information Technology student at
-                Macquarie University with hands-on experience in full-stack web
-                development, Flutter mobile applications, applied AI and
-                product development. Currently a Software Intern at Calumino,
-                working across internal software tools, debugging, feature
-                development and Python-based computer vision workflows.
-                Co-founder of Syllabus Sync, selected for the Macquarie
-                University Incubator. Australian citizen graduating in
-                November 2026, seeking a graduate software engineering role
-                where I can contribute to real product development, solve
-                practical engineering problems and grow within an experienced
-                technical team.
+                Macquarie University, majoring in Artificial Intelligence and
+                Web &amp; Mobile Application Development, with hands-on
+                experience across software engineering, full-stack web
+                development, Flutter mobile applications and applied AI.
+                Currently a Software Intern at Calumino and co-founder of
+                Syllabus Sync, with experience building, debugging and testing
+                real software products. Australian citizen graduating in
+                November 2026 and seeking graduate software engineering and
+                technology roles.
               </p>
             </section>
           </AnimatedSection>
@@ -191,7 +192,10 @@ export function ResumeClient() {
                 <h3 className="text-lg font-bold text-foreground">Projects</h3>
               </div>
               <div className="space-y-4">
-                {Object.values(projects).filter((p) => !p.resumeHide).map((project) => (
+                {resumeProjectOrder
+                  .map((slug) => projects[slug])
+                  .filter((p) => !p.resumeHide)
+                  .map((project) => (
                   <div key={project.slug} className="glass-card p-6">
                     <div className="flex flex-col sm:flex-row sm:items-baseline justify-between mb-3 gap-1">
                       <div className="flex items-center gap-2 flex-wrap">
@@ -364,7 +368,7 @@ export function ResumeClient() {
                     </div>
                     <p className="text-sm text-accent-light mb-2">{edu.institution}</p>
                     <ul className="space-y-1">
-                      {edu.details.slice(0, 1).map((d) => (
+                      {edu.details.slice(0, 2).map((d) => (
                         <li key={d} className="text-sm text-text-secondary">
                           • {d}
                         </li>

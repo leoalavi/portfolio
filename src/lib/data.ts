@@ -127,7 +127,7 @@ export const projects: Record<string, Project> = {
     status: "In Development",
     year: "Mar 2026 – Present",
     description:
-      "A Flutter campus navigation app for Macquarie University with destination discovery, route previews, transport information and deep linking. The project is being developed as the shared navigation foundation for future campus experiences, including MQ Journey.",
+      "A Flutter campus navigation app for Macquarie University with destination discovery, route previews, transport information and deep linking.",
     tags: [
       "Flutter",
       "Dart",
@@ -139,6 +139,8 @@ export const projects: Record<string, Project> = {
     ],
     links: {
       repo: "https://github.com/leoalavi/MQ_Navigation",
+      repoAlt: "https://github.com/leoalavi/MQ-Journey",
+      repoAltLabel: "MQ Journey Repo",
     },
     caseStudy: {
       context:
@@ -222,7 +224,7 @@ export const projects: Record<string, Project> = {
     year: "2026",
     description:
       "Upcoming Macquarie University PACE industry project with Salesforce, focused on exploring an AI-assisted retail experience for product recommendations, customer requirements and related retail workflows.",
-    tags: ["Python", "LLM APIs", "Retail Domain", "Salesforce PACE"],
+    tags: ["Salesforce PACE", "Retail Domain", "Planned: LLM Integration"],
     links: {},
     caseStudy: {
       context:

@@ -260,13 +260,13 @@ Built with Next.js, React, TypeScript and Supabase, with accessibility, authenti
 
 ### 2. MQ Navigation - Campus Navigation Platform
 
-A Flutter campus navigation app for Macquarie University with destination discovery, route previews, transport information and deep linking. Being developed as the shared navigation foundation for future campus experiences, including MQ Journey.
+A Flutter campus navigation app for Macquarie University with destination discovery, route previews, transport information and deep linking.
 
 | | |
 | :--- | :--- |
 | **Stack** | Flutter · Dart · GoRouter · Deep Linking · Flutter Testing |
 | **Status** | In development |
-| **Links** | [Source](https://github.com/leoalavi/MQ_Navigation) |
+| **Links** | [Source](https://github.com/leoalavi/MQ_Navigation) · [MQ Journey Repo](https://github.com/leoalavi/MQ-Journey) |
 
 ### 3. Astronomy Open Night - Event Navigation App
 
@@ -283,7 +283,7 @@ Upcoming Macquarie University PACE industry project with Salesforce, focused on 
 
 | | |
 | :--- | :--- |
-| **Stack** | Python · LLM APIs · Retail Domain |
+| **Stack** | Salesforce PACE · Retail Domain · Planned: LLM Integration |
 | **Status** | Upcoming industry project |
 
 ### 5. CIFAR-10 Image Classification - PyTorch Benchmark

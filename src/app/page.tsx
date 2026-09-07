@@ -114,9 +114,10 @@ Full-Stack, Mobile & Applied AI · Graduating November 2026
               transition={{ duration: 0.6, delay: 0.4 }}
               className="text-lg text-text-secondary leading-relaxed max-w-xl mb-6"
             >
-I build full-stack web, Flutter mobile and applied AI products,
-              including a live student platform and a mobile app currently in
-              external testing for a university event. I&apos;m a final-year IT
+I build full-stack web applications, Flutter mobile apps and applied
+              AI products, including a live student platform and a mobile app
+              currently in external testing for a university event. I&apos;m
+              a final-year IT
               student at{" "}
               <span className="text-foreground font-medium">
                 Macquarie University
